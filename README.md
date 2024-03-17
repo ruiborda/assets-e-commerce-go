@@ -1,15 +1,10 @@
 # assets-e-commerce-go
 
-To install dependencies:
+Assets for e-commerce-go website and admin panel
+
+## Production
 
 ```bash
-bun install
+bun run build
 ```
 
-To run:
-
-```bash
-bun run index.ts
-```
-
-This project was created using `bun init` in bun v1.0.27. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
