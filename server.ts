@@ -1,6 +1,6 @@
 const BASE_PATH = "./dist";
 const server = Bun.serve({
-    port: 8047,
+    port: 8048,
     async fetch(req) {
         let reqUrlPath = new URL(req.url).pathname;
         if (reqUrlPath === "/") {
