@@ -9,4 +9,9 @@ export const assets: { entrypoint, outDir, pathname }[] = [
         outDir: './dist/tsparticles',
         pathname: '/tsparticles/preset.confetti.bundle.min.js'
     },
+    {
+        entrypoint: './src/sweetalert2/sweetalert2.min.ts',
+        outDir: './dist/sweetalert2',
+        pathname: '/sweetalert2/sweetalert2.min.js'
+    }
 ]
