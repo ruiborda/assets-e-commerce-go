@@ -1,0 +1,1 @@
+import "@tsparticles/preset-confetti/tsparticles.preset.confetti.bundle"

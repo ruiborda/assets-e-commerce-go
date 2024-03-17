@@ -13,6 +13,7 @@ for (const asset of assets) {
 import { renderToString } from "react-dom/server";
 import React from "react";
 
+
 function Index(props: { children: React.ReactNode }) {
     return (
         <html lang="es">
@@ -21,6 +22,7 @@ function Index(props: { children: React.ReactNode }) {
             <meta name="viewport"
                   content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
             <meta httpEquiv="X-UA-Compatible" content="ie=edge"/>
+            <script src="/tsparticles/preset.confetti.min.js"></script>
             <script src="/fontawesome/all.min.js"></script>
             <title>Document</title>
         </head>
@@ -34,12 +36,13 @@ function Index(props: { children: React.ReactNode }) {
 const stream = await renderToString(
     <Index>
         <h1>Assets uploaded</h1>
-        {assets.map((asset) => (
-            <a key={asset.pathname} href={asset.pathname}><i className={"fa-solid fa-file"}></i> {asset.pathname}</a>
-        ))}
+        <div className={''} style={{display: "flex", flexDirection: "column", gap: "1rem"}}>
+            {assets.map((asset) => (
+                <a key={asset.pathname} href={asset.pathname}><i className={"fa-solid fa-file"}></i> {asset.pathname}</a>
+            ))}
+        </div>
     </Index>
 );
 
-// print the stream in dist/index.html
 const indexPath = "./dist/index.html";
 await Bun.write(indexPath, stream);
