@@ -1,17 +1,18 @@
 import {assets} from "./src/assets.ts";
-
-
+import { renderToString } from "react-dom/server";
+import React from "react";
 for (const asset of assets) {
     const result = await Bun.build({
         entrypoints: [asset.entrypoint],
         outdir: asset.outDir,
         minify: true,
     });
-    console.log(`Built ${asset.entrypoint} to ${asset.outDir}`);
+    if (!result.success){
+        throw new Error("Failed to build asset");
+    }
 }
 
-import { renderToString } from "react-dom/server";
-import React from "react";
+
 
 
 function Index(props: { children: React.ReactNode }) {
