@@ -11,7 +11,8 @@
     "@fortawesome/free-regular-svg-icons": "^6.5.1",
     "@fortawesome/free-solid-svg-icons": "^6.5.1",
     "@tsparticles/preset-confetti": "^3.0.2",
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "sweetalert2": "^11.10.6"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
